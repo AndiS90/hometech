@@ -1,0 +1,170 @@
+/*Start Header Styles*/
+header {
+    /*background-color: var(--mainBackground);*/
+    width: 50%;
+    display: flex;
+    float: right;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    position: sticky;
+  top: 0;
+  overflow: hidden;
+  z-index: 5;
+
+}
+
+
+nav {
+    // width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    position: relative;
+
+}
+
+@media(min-width: 768px){
+    header{
+    }
+}
+
+@media screen and (min-width: 1024px) {
+
+    header {
+        width: 100%;
+        flex-direction: row;
+    }
+
+    nav{
+        z-index: 2;
+    }
+
+    nav::before {
+        height: auto;
+        background: url("../images/navbars.jpg");
+        content: " ";
+        inset: 0;
+        opacity: 1;
+        position: absolute;
+        z-index: 2;
+    }
+
+    nav::after {
+        content: " ";
+        background: var(--nav-green);
+        inset: 0;
+        opacity: .85;
+        position: absolute;
+        z-index: 2;
+    }
+
+    nav {
+        width: 100%;
+
+        ul {
+            flex-direction: row !important;
+        }
+    }
+}
+
+nav ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    z-index: 3;
+    width: 100%;
+}
+
+@media screen and (max-width: 1024px) {
+
+    nav ul::before {
+        width: 100%;
+        height: auto;
+        background: url("../images/navbars.jpg");
+        content: " ";
+        inset: 0;
+        top: 69px;
+        opacity: 1;
+        position: absolute;
+        z-index: 2;
+    }
+
+    nav ul::after {
+        width: 100%;
+        content: " ";
+        background: var(--nav-green);
+        inset: 0;
+        top: 69px;
+        opacity: .85;
+        position: absolute;
+        z-index: 2;
+    }
+
+    nav ul li {
+        padding-right: 2rem;
+    }
+}
+
+nav ul li {
+    font-size: 2em;
+    list-style: none;
+    text-align: center;
+    width: 100%;
+    z-index: 3;
+
+
+}
+
+nav ul li a {
+    color: var(--nav-text) !important;
+    text-align: center;
+    font-family: 'Signika', sans-serif;
+    font-size: 1.2rem !important;
+    list-style: none;
+    text-align: center !important;
+    width: 100%;
+    padding: 0 .3rem;
+
+}
+
+nav ul li a:hover {
+    background-color: var(--light-color);
+    width: 100%;
+
+}
+
+/*End Header Styles*/
+
+
+
+
+nav input[type='checkbox'],
+nav label {
+    display: none;
+}
+
+@media screen and (max-width: 1024px) {
+
+    nav label {
+        font-size: 3em;
+        color: var(--light-color);
+        text-align: center;
+        display: flex;
+        padding: 0.3em;
+        line-height: 1.2em;
+        align-self:self-end;
+        //justify-self: flex-end;
+        z-index: 4;
+    }
+
+    nav input[type='checkbox']:not(:checked)+ul {
+        display: none;
+    }
+
+    // nav input[type='checkbox']:checked~label {
+    // justify-self: flex-end;    }
+}
